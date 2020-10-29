@@ -91,7 +91,7 @@ function getCurrentDateAndTime() {
 }
 
 async function initializeHistory(socket) {
-    let history = await api.fetchMarketHistoryByEntries(10);
+    let history = await api.fetchMarketHistoryByEntries(20);
     socket.emit('init', history);
 }
 

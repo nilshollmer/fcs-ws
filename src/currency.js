@@ -6,7 +6,7 @@ let currency = {
     },
     randomizeValue: function (value) {
         let rate = 1.001;
-        let variance = 0.7;
+        let variance = 0.6;
         let new_value = value * rate + variance * this.randomAroundZero();
         if (new_value < 0 ) {
             new_value += 1
