@@ -17,11 +17,7 @@ Run `npm start`
 
 ## Routes
 
-/stopSocket:  
-Clear timeouts on server. Use before reseting values of currencies
-
 /resetValues:  
-Resets values for currencies
-
-/startSocket:
+Clear timeouts on server.
+Resets values for currencies.
 Restarts timouts on server.

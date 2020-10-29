@@ -18,29 +18,21 @@ app.get('/', (req, res) => {
     res.send("<h1>Socket server</h1>");
 });
 
-app.get('/stopSocket', (req, res) => {
-    clearTimeout(value_movement);
-    clearTimeout(save_values);
-    res.send("<h1>Stopping socket... </h1>");
-});
 
 app.get('/resetValues', async (req, res) => {
+    clearTimeout(value_movement);
+    clearTimeout(save_values);
     latest_values = [
         { product: 'bells', sell_value: 20 },
         { product: 'pokedollar', sell_value: 16 },
         { product: 'rupees', sell_value: 18 },
         { product: 'rings', sell_value: 19 }
     ];
-    res.send("<h1>Resetting values... </h1>");
-});
-
-app.get('/startSocket', async (req, res) => {
-    console.log(latest_values);
-    latest_values = await currency.initializeValues();
     valueMovement();
     saveProductValues();
-    res.send("<h1>Starting socket... </h1>");
+    res.redirect('https://fantasycurrencyservice.nilshollmer.me');
 });
+
 
 io.on('connection', socket => {
     console.log("User connected");
